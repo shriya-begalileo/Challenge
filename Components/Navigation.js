@@ -17,8 +17,7 @@ const NavigationApp = ()=>{
 
    return (
     <NavigationContainer >
-    {/* <Stack.Navigator initialRouteName='Splash' > */}
-    <Stack.Navigator initialRouteName='Products' >
+    <Stack.Navigator initialRouteName='Splash' >
         <Stack.Screen
         name= 'Splash'
         component={Splash}
