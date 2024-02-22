@@ -56,7 +56,7 @@ const LoginScreen = ({navigation})=>{
             let userObj = {email,password,name}
              
             try{
-                const response = await fetch(`http://localhost:8080/users/login`, {
+                const response = await fetch(`https://dummy-server-ipe7.onrender.com/users/login`, {
                     method: "POST", 
                     headers: {
                       "Content-Type": "application/json",

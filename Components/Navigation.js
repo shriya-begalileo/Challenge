@@ -9,6 +9,7 @@ import { Text } from 'react-native';
 import CameraScreenPage from './CameraScreen';
 import ScoreCardScreen from './ScoreCardScreen';
 import RegisterScreen from './RegisterScreen';
+import { Products } from './Products';
 
 const Stack = createNativeStackNavigator()
 
@@ -16,7 +17,8 @@ const NavigationApp = ()=>{
 
    return (
     <NavigationContainer >
-    <Stack.Navigator initialRouteName='Splash' >
+    {/* <Stack.Navigator initialRouteName='Splash' > */}
+    <Stack.Navigator initialRouteName='Products' >
         <Stack.Screen
         name= 'Splash'
         component={Splash}
@@ -48,6 +50,12 @@ const NavigationApp = ()=>{
         </Stack.Screen>
         <Stack.Screen 
         name="Scores" component={ScoreCardScreen} />
+        <Stack.Screen
+        name= 'Products'
+        component={Products}
+       
+        >
+        </Stack.Screen>
     </Stack.Navigator>
 
 </NavigationContainer>

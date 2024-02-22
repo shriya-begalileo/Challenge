@@ -23,7 +23,7 @@ export default RegisterScreen = ({navigation})=>{
     const handleRegister = async()=>{
         let userObj = inputs
         try{
-             const response = await fetch(`http://localhost:8080/users/register`, {
+             const response = await fetch(`https://dummy-server-ipe7.onrender.com/users/register`, {
                 method: "POST", 
                 headers: {
                   "Content-Type": "application/json",

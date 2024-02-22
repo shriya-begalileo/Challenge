@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View,Text, TextInput, Button, TouchableOpacity, FlatList, SafeAreaView, Switch, StyleSheet, SectionList, ActivityIndicator } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Products } from "./Components/Products";
  const App = () =>{
     const [value,setValue]=useState("")
     const [todoArray,setTodoArray]=useState([])
@@ -81,6 +82,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
     return (
         <SafeAreaView>
+           
         <View >
             <Text style={{textAlign:'center'}}>Counter</Text>
             <Text>Count: {count}</Text>

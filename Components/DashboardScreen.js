@@ -44,6 +44,9 @@ const DashboardScreen = ({ navigation, route }) => {
         navigation.navigate('Scores')
     }
 
+    const getProducts = ()=>{
+        navigation.navigate('Products')
+    }
     return (
         <SafeAreaView>
             <View style={styles.view}>
@@ -70,12 +73,14 @@ const DashboardScreen = ({ navigation, route }) => {
                         <Text>ScoreCard</Text>
                     </View>
                     </TouchableHighlight>
+                    <TouchableHighlight underlayColor='transparent' onPress={getProducts}>
                     <View style={[styles.card, { backgroundColor: '#CBC3E3' }]} >
                     <View style={styles.icon}>
                             <FontAwesomeIcon icon={faFileArrowUp} size={25} style={{color:'gray'}} />
                         </View>
-                        <Text>Upload Documents</Text>
+                        <Text>GetProducts</Text>
                     </View>
+                    </TouchableHighlight>
                 </View>
             </ScrollView>
 
