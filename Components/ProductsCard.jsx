@@ -13,8 +13,9 @@ export const ProductsCard = ({ brand, category, price }) => {
 const styles = StyleSheet.create({
     card: {
         backgroundColor: '#ffffff',
+
         borderRadius: 8,
-        padding: 16,
+        padding: 17,
         marginBottom: 12,
         shadowColor: "#000",
         shadowOffset: {
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginBottom: 8,
     },
+    
 });
 
 export default ProductsCard;
