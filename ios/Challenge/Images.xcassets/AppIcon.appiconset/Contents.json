@@ -31,13 +31,21 @@
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
       "filename" : "120 1.png",
+=======
+      "filename" : "120.png",
+>>>>>>> cfd0960f5042faefb9e6b32b00127df5bcdcae79
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
       "filename" : "120.png",
+=======
+      "filename" : "120 1.png",
+>>>>>>> cfd0960f5042faefb9e6b32b00127df5bcdcae79
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"

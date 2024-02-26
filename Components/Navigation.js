@@ -28,6 +28,7 @@ const NavigationApp = ()=>{
         component={RegisterScreen}
         options={{ title: 'Register',headerLeft: () => <Text></Text> }}
         >
+            
         </Stack.Screen>
         <Stack.Screen
         name= 'Login'
