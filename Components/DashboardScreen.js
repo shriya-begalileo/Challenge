@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useEffect, useState } from "react"
-import { Alert, SafeAreaView, ScrollView, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from "react-native"
+import { Alert, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from "react-native"
 import { faCamera } from '@fortawesome/free-solid-svg-icons/faCamera'
 import { faSquarePollHorizontal } from "@fortawesome/free-solid-svg-icons/faSquarePollHorizontal"
 import { faFileArrowUp } from "@fortawesome/free-solid-svg-icons/faFileArrowUp"
 
 const DashboardScreen = ({ navigation, route }) => {
-
+console.log(route)
     // const [data, setData] = useState("")
 
     // const getStoredData = async () => {
@@ -51,7 +51,11 @@ const DashboardScreen = ({ navigation, route }) => {
         <SafeAreaView>
             <View style={styles.view}>
                 <Text>{route.params}</Text>
-                <TouchableOpacity style={styles.button} onPress={handleLogout}>
+                {/* <Image
+        style={styles.stretch}
+        source={require({})}
+      />               */}
+        <TouchableOpacity style={styles.button} onPress={handleLogout}>
                     <Text style={styles.text}>Logout</Text>
                 </TouchableOpacity>
             </View>

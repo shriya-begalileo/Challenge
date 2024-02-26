@@ -1,8 +1,21 @@
-import { useState } from "react"
 import { Alert, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import React, {useState} from 'react';
+
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  webClientId:
+    '739776953510-slr1t00227fk7ro20g09sr5e0ln4nucv.apps.googleusercontent.com',
+  iosClientId:
+    '739776953510-inqd4cvn75orp1ffh1pmojahmfnuolfb.apps.googleusercontent.com',
+});
 
 export default RegisterScreen = ({navigation})=>{
-
+    const [user, setUserInfo] = useState(null)
     const [inputs,setInputs] = useState({
         email: "",
         password: "",
@@ -45,7 +58,27 @@ export default RegisterScreen = ({navigation})=>{
         }
     }
 
-
+    const signIn = async () => {
+        try {
+          console.log('success');
+          await GoogleSignin.hasPlayServices();
+          const userInfo = await GoogleSignin.signIn();
+          setUserInfo(userInfo); // Update user info state
+          console.log(userInfo, "navigate");
+        console.log(userInfo.user.name);
+        navigation.navigate('Dashboard', userInfo.user.name,userInfo.user.photo );
+        } catch (error) {
+          if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            // user cancelled the login flow
+          } else if (error.code === statusCodes.IN_PROGRESS) {
+            // operation (e.g. sign in) is in progress already
+          } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            // play services not available or outdated
+          } else {
+            // some other error happened
+          }
+        }
+      };
     return (
         
         <SafeAreaView>
@@ -65,6 +98,16 @@ export default RegisterScreen = ({navigation})=>{
             <TouchableOpacity onPress={handleRegister} activeOpacity={0.8} style={styles.button} >
                 <Text>Register</Text>
             </TouchableOpacity>
+
+            <View style={styles.container}>
+      <Text style={styles.heading}>Push Notification</Text>
+      <GoogleSigninButton
+        style={styles.googleSignInButton}
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Light}
+        onPress={signIn}
+      />
+    </View>
             
         </SafeAreaView>
     )
@@ -94,5 +137,24 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         marginTop:20,
         borderRadius:6
-    }
+    },
+    auth:{
+        paddingTop:15
+    },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
+        marginTop:15
+      },
+      heading: {
+        fontSize: 24,
+        marginBottom: 20,
+      },
+      googleSignInButton: {
+        width: 192,
+        height: 48,
+        marginTop: 20,
+      },
 })
