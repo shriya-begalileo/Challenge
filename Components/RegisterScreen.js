@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Alert, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import Auth from "./Auth"
 
 export default RegisterScreen = ({navigation})=>{
 
@@ -65,6 +66,10 @@ export default RegisterScreen = ({navigation})=>{
             <TouchableOpacity onPress={handleRegister} activeOpacity={0.8} style={styles.button} >
                 <Text>Register</Text>
             </TouchableOpacity>
+
+            <View style={styles.auth}>
+                <Auth />
+            </View>
             
         </SafeAreaView>
     )
@@ -94,5 +99,8 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         marginTop:20,
         borderRadius:6
+    },
+    auth:{
+        paddingTop:15
     }
 })
